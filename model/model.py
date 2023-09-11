@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class NotesApp:
-    def __init__(self, path: str = 'phones.json'):
+    def __init__(self, path: str = 'notes.json'):
         self.notes: dict = {}
         self.path = path
 
