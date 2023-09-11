@@ -35,3 +35,17 @@ class NotesApp:
                 result[index] = note
                 return result
 
+    def check_id(self):
+        if self.notes:
+            return max(list(map(int, self.notes))) + 1
+
+    def add(self, new_note: dict[str, str, datetime]):
+        notes = {self.check_id(): new_note}
+        self.notes.update(notes)
+
+    def remove(self, index):
+        title = self.notes.pop(str(index))
+        return title.get('title')
+
+    def update(self, index: str, new_note: dict[str, str, datetime]):
+        self.notes[index] = new_note
