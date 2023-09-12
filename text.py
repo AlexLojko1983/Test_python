@@ -13,8 +13,13 @@ invalid_selection = f'Ошибка ввода. Введите число от 1 
 
 select_menu = 'Выберите пункт меню: '
 
-save_successful = 'ss'
-error_save = 'not ss'
+load_successful = 'Loading'
+error_load = 'not loading'
+
+save_successful = 'Saving'
+error_save = 'not saving'
+
+empty_node = 'Empty Nodes'
 
 def add_successful(title: str) -> str:
     return f'Заметка {title} успешно добавлена!'

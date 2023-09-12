@@ -19,7 +19,7 @@ def start():
                 else:
                     view.print_message(text.error_save)
             case 3:
-                view.show_contacts(na.get(), text.empty_book)
+                view.show_nodes(na.get())       #text.empty_node)#
             case 4:
                 new = view.add_node()
                 na.add(new)

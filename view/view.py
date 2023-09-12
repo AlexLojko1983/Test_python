@@ -11,18 +11,18 @@ def menu() -> int:
            return int(selected)
        print(text.invalid_selection)
 
+def show_nodes(node):
+    if node:
+        print(f'{node}: {node.value}')
+    print(text.empty_node)
+
 
 def print_message(message):
     print(message)
 
-
-
-
-
-
 def add_node():
     new_node = {}
     for key, value in text.new_node.items():
-        new_node[key] = input(value), datetime
-
+        new_node[key] = input(value)
+        new_node[key] = datetime.strptime(value)
     return new_node

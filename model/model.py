@@ -37,10 +37,11 @@ class NotesApp:
 
     def check_id(self):
         if self.notes:
-            return max(list(map(int, self.notes))) + 1
+            return len(list(map(int, self.notes))) + 1
 
     def add(self, new_note: dict[str, str, datetime]):
-        notes = {self.check_id(): new_note}
+        print(self.check_id())
+        notes = {str(self.check_id()): new_note}
         self.notes.update(notes)
 
     def remove(self, index):
