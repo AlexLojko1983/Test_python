@@ -20,6 +20,7 @@ class NotesApp:
         except:
             return False
 
+
     def save(self):
         try:
             with open(self.path, 'w', encoding="UTF-8") as f:
