@@ -19,15 +19,15 @@ def start():
                 else:
                     view.print_message(text.error_save)
             case 3:
-                view.show_nodes(na.get())       #text.empty_node)#
+                view.show_nodes(na.get(), text.empty_note)
             case 4:
-                new = view.add_node()
+                new = view.add_note()
                 na.add(new)
                 view.print_message(text.add_successful(new.get('title')))
             case 5:
                 word = view.view_input(text.search_word)
                 result = na.find(word)
-                view.show_contacts(result, text.empty_search(word))
+                view.show_nodes(result, text.empty_search(word))
             case 6:
                 index = view.view_input(text.index_update)
                 book = view.add_contact()

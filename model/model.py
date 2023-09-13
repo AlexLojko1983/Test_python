@@ -31,16 +31,16 @@ class NotesApp:
     def find(self, word: str) -> dict[int:dict[str, str, datetime]]:
         result = {}
         for index, note in self.notes.items():
-            if word.lower() in ''.join(note.values()).lower():
+            if word.lower() in ' '.join(note.values()).lower():
                 result[index] = note
                 return result
 
     def check_id(self):
         if self.notes:
             return len(list(map(int, self.notes))) + 1
+        return 1
 
     def add(self, new_note: dict[str, str, datetime]):
-        print(self.check_id())
         notes = {str(self.check_id()): new_note}
         self.notes.update(notes)
 

@@ -19,13 +19,18 @@ error_load = 'not loading'
 save_successful = 'Saving'
 error_save = 'not saving'
 
-empty_node = 'Empty Nodes'
+empty_note = 'Empty Nodes'
+
+search_word = 'Что ищем? '
+def empty_search(word):
+    return f' {word} не найдено!'
+
 
 def add_successful(title: str) -> str:
     return f'Заметка {title} успешно добавлена!'
 
 
-new_node = {
+new_note = {
     'title': 'Введите заголовок: ',
     'body': 'Введите тело заметки: '
 }

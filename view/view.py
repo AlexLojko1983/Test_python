@@ -11,18 +11,24 @@ def menu() -> int:
            return int(selected)
        print(text.invalid_selection)
 
-def show_nodes(node):
-    if node:
-        print(f'{node}: {node.value}')
-    print(text.empty_node)
+def show_nodes(note:dict, message):
+    if note:
+        for index, note in note.items():
+            print(f'{index:<3}. {note.get("title"):<50}\n{note.get("body"):<250}\n{note.get("date"):<20}')
+    else:
+        print_message(message)
 
 
 def print_message(message):
     print(message)
 
-def add_node():
-    new_node = {}
-    for key, value in text.new_node.items():
-        new_node[key] = input(value)
-        new_node[key] = datetime.strptime(value)
-    return new_node
+def add_note():
+    new_note = {}
+    for key, value in text.new_note.items():
+        new_note[key] = input(value)
+    new_note['date'] = datetime.now().isoformat()
+    return new_note
+
+def view_input(text:str):
+    return input(text)
+
