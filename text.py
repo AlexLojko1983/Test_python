@@ -22,8 +22,16 @@ error_save = 'not saving'
 empty_note = 'Empty Nodes'
 
 search_word = 'Что ищем? '
+
+index_update = 'Введите id: '
+
+
 def empty_search(word):
     return f' {word} не найдено!'
+
+
+def remove_contact(word):
+    return f' Заметка {word} удалена'
 
 
 def add_successful(title: str) -> str:
@@ -34,3 +42,5 @@ new_note = {
     'title': 'Введите заголовок: ',
     'body': 'Введите тело заметки: '
 }
+
+goodbay = 'До встречи!!'

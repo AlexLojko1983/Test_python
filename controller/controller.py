@@ -30,20 +30,16 @@ def start():
                 view.show_nodes(result, text.empty_search(word))
             case 6:
                 index = view.view_input(text.index_update)
-                book = view.add_contact()
-                na.update(book, index)
+                new_note = view.add_note()
+                na.update(index, new_note)
             case 7:
                 word = view.view_input(text.search_word)
                 result = na.find(word)
-                view.show_contacts(result, text.empty_search(word))
-
+                view.show_nodes(result, text.empty_search(word))
+                index = view.view_input(text.index_update)
                 name = na.remove(index)
                 view.print_message(text.remove_contact(name))
 
             case 8:
-                if na.check_on_exit():
-                    answer = view.view_input(text.change_confirm)
-                    if answer != 'n':
-                        na.save_file()
                 view.print_message(text.goodbay)
                 break
